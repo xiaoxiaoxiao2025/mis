@@ -105,8 +105,8 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
 	<tw-storydata name="大湾风云" startnode="1" creator="Twine" creator-version="2.10.0" format="SugarCube" format-version="2.37.3" ifid="09516BC4-E436-481E-812D-159024964AE2" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Start" tags="" position="625,250" size="100,100">&lt;h2&gt;7:00 AM · Shenzhen深圳&lt;/h2&gt;
-&lt;p&gt;As the president of the Greater Bay Area Technology Group, you need to travel to Hong Kong today to attend the Low Altitude Economy Summit.&lt;/p&gt;
-&lt;p&gt;作为大湾区科技集团总裁，您今天需要前往香港参加低空经济峰会。&lt;/p&gt;
+&lt;p&gt;As the president of the Greater Bay Area Technology Group, you need to travel to Hong Kong today to attend the Low Altitude Economy Summit.Please choose your  transportation:&lt;/p&gt;
+&lt;p&gt;作为大湾区科技集团总裁，您今天需要前往香港参加低空经济峰会，请选择你的出行方式：&lt;/p&gt;
 [[Take eVTOL |eVTOL Travel]]
 [[Choose traditional helicopter|Helicopter Travel]]</tw-passagedata><tw-passagedata pid="2" name="StoryInit" tags="" position="250,150" size="100,100">&lt;&lt;set $businessInfluence to 0&gt;&gt;
 &lt;&lt;set $policyCompliance to 0&gt;&gt;
@@ -178,72 +178,66 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 [[Conservative cooperation (1 billion yuan)|Conservative Cooperation]]</tw-passagedata><tw-passagedata pid="9" name="Tech Exchange" tags="" position="375,875" size="100,100">&lt;&lt;set $techInnovation -= 5&gt;&gt;
 &lt;p&gt;Exchanged 6G technology for airspace usage rights.&lt;/p&gt;
 &lt;p&gt;用6G技术换取了空域使用权。&lt;/p&gt;
-&lt;p&gt;Business Influence: &lt;&lt;print $businessInfluence&gt;&gt;&lt;/p&gt;
-&lt;p&gt;Policy Compliance: &lt;&lt;print $policyCompliance&gt;&gt;&lt;/p&gt;
-&lt;p&gt;Tech Innovation: &lt;&lt;print $techInnovation&gt;&gt;&lt;/p&gt;
-&lt;p&gt;Funds: &lt;&lt;print $funds&gt;&gt;&lt;/p&gt;
-[[Handle crisis|Crisis]]</tw-passagedata><tw-passagedata pid="10" name="Aggressive Bid" tags="" position="500,875" size="100,100">&lt;&lt;set $funds -= 2&gt;&gt;
+&lt;p&gt;Tech Innovation -5&lt;/p&gt;
+[[Next|Next]]</tw-passagedata><tw-passagedata pid="10" name="Aggressive Bid" tags="" position="500,875" size="100,100">&lt;&lt;set $funds -= 2&gt;&gt;
 &lt;&lt;set $businessInfluence += 10&gt;&gt;
 &lt;&lt;set $policyCompliance -= 10&gt;&gt;
 &lt;&lt;set $airspaceMonopoly to true&gt;&gt;
 &lt;p&gt;💸 High price secures all airspace! Competitors are displeased.&lt;/p&gt;
 &lt;p&gt;💸 高价拍下全部空域！引发竞争对手不满。&lt;/p&gt;
+&lt;p&gt;Business Influence +10&lt;/p&gt;
+&lt;p&gt;Policy Compliance -10&lt;/p&gt;
+&lt;p&gt;Funds -2&lt;/p&gt;
+&lt;p&gt;AirspaceMonopoly!&lt;/p&gt;
+&lt;p&gt;实现空域垄断!&lt;/p&gt;
+
 &lt;&lt;set $bonus to Math.random()&gt;&gt;
 &lt;&lt;if $bonus &lt;= 0.2&gt;&gt;
     &lt;&lt;set $funds += 3&gt;&gt;
     &lt;p&gt;🪨 Unexpectedly discovered rare earth minerals beneath the airspace!&lt;/p&gt;
       &lt;p&gt;🪨 意外发现空域下稀土矿藏！&lt;/p&gt;
+      &lt;p&gt;Funds +3&lt;/p&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;p&gt;Business Influence: &lt;&lt;print $businessInfluence&gt;&gt;&lt;/p&gt;
-&lt;p&gt;Policy Compliance: &lt;&lt;print $policyCompliance&gt;&gt;&lt;/p&gt;
-&lt;p&gt;Tech Innovation: &lt;&lt;print $techInnovation&gt;&gt;&lt;/p&gt;
-&lt;p&gt;Funds: &lt;&lt;print $funds&gt;&gt;&lt;/p&gt;
-[[Handle crisis|Crisis]]</tw-passagedata><tw-passagedata pid="11" name="Conservative Cooperation" tags="" position="625,875" size="100,100">&lt;&lt;set $funds -= 1&gt;&gt;
+[[Next|Next]]</tw-passagedata><tw-passagedata pid="11" name="Conservative Cooperation" tags="" position="625,875" size="100,100">&lt;&lt;set $funds -= 1&gt;&gt;
 &lt;&lt;set $businessInfluence += 5&gt;&gt;
 &lt;&lt;set $policyCompliance += 5&gt;&gt;
 &lt;p&gt;Handshake agreement for joint development.&lt;/p&gt;
 &lt;p&gt;握手达成联合开发协议。&lt;/p&gt;
+&lt;p&gt;Business Influence+5&lt;/p&gt;
+&lt;p&gt;Policy Compliance +5&lt;/p&gt;
+&lt;p&gt;Funds -1&lt;/p&gt;
+
 &lt;&lt;set $investigation to Math.random()&gt;&gt;
 &lt;&lt;if $investigation &lt;= 0.3&gt;&gt;
     &lt;&lt;set $policyCompliance -= 10&gt;&gt;
-    &lt;p&gt;⚖️ Faced with an antitrust investigation!&lt;/p&gt;
-     &lt;p&gt;⚖️ 遭遇反垄断调查！&lt;/p&gt;
+    &lt;p&gt;⚖️ Suddenly:Faced with an antitrust investigation!&lt;/p&gt;
+     &lt;p&gt;⚖️ 突发：遭遇反垄断调查！&lt;/p&gt;
+     &lt;p&gt;Policy Compliance -10&lt;/p&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;p&gt;Business Influence: &lt;&lt;print $businessInfluence&gt;&gt;&lt;/p&gt;
-&lt;p&gt;Policy Compliance: &lt;&lt;print $policyCompliance&gt;&gt;&lt;/p&gt;
-&lt;p&gt;Tech Innovation: &lt;&lt;print $techInnovation&gt;&gt;&lt;/p&gt;
-&lt;p&gt;Funds: &lt;&lt;print $funds&gt;&gt;&lt;/p&gt;
-[[Handle crisis|Crisis]]</tw-passagedata><tw-passagedata pid="12" name="Crisis" tags="" position="500,1000" size="100,100">&lt;h2&gt;6:00 PM · Crisis&lt;/h2&gt;
+[[Next|Next]]
+</tw-passagedata><tw-passagedata pid="12" name="Next" tags="" position="525,1000" size="100,100">&lt;h2&gt;6:00 PM · Crisis&lt;/h2&gt;
 &lt;p&gt;A cargo drone loses control and crashes into the Guangzhou Tower!&lt;/p&gt;
 &lt;p&gt;货运无人机失控撞向广州塔！&lt;/p&gt;
 &lt;&lt;if $techInnovation &gt;= 10&gt;&gt;
-    [[Activate self-destruct sequence|Self-Destruct]]
+[[Activate self-destruct sequence|Self-Destruct]]
 &lt;&lt;/if&gt;&gt;
 [[Blame the supplier|Blame Supplier]]
 &lt;&lt;if $funds &gt;= 1&gt;&gt;
-    [[Pay 1 billion yuan hush money|Hush Money]]
+[[Pay 1 billion yuan hush money|Hush Money]]
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="13" name="Self-Destruct" tags="" position="375,1125" size="100,100">&lt;p&gt;🛑 System automatically destroys the rogue drone, preventing casualties.&lt;/p&gt;
 &lt;p&gt;🛑 系统自动销毁失控无人机，避免伤亡。&lt;/p&gt;
 &lt;&lt;set $policyCompliance += 5&gt;&gt;
-&lt;p&gt;Business Influence: &lt;&lt;print $businessInfluence&gt;&gt;&lt;/p&gt;
-&lt;p&gt;Policy Compliance: &lt;&lt;print $policyCompliance&gt;&gt;&lt;/p&gt;
-&lt;p&gt;Tech Innovation: &lt;&lt;print $techInnovation&gt;&gt;&lt;/p&gt;
-&lt;p&gt;Funds: &lt;&lt;print $funds&gt;&gt;&lt;/p&gt;
+&lt;p&gt;Policy Compliance +5&lt;/p&gt;
 [[View ending|Ending]]</tw-passagedata><tw-passagedata pid="14" name="Blame Supplier" tags="" position="500,1125" size="100,100">&lt;p&gt;🤐 Blamed supplier&#39;s technical flaws, temporarily defusing the situation.&lt;/p&gt;
 &lt;p&gt;🤐 指责供应商技术缺陷，短期平息事件。&lt;/p&gt;
 &lt;&lt;set $businessInfluence -= 15&gt;&gt;
-&lt;p&gt;Business Influence: &lt;&lt;print $businessInfluence&gt;&gt;&lt;/p&gt;
-&lt;p&gt;Policy Compliance: &lt;&lt;print $policyCompliance&gt;&gt;&lt;/p&gt;
-&lt;p&gt;Tech Innovation: &lt;&lt;print $techInnovation&gt;&gt;&lt;/p&gt;
-&lt;p&gt;Funds: &lt;&lt;print $funds&gt;&gt;&lt;/p&gt;
+&lt;p&gt;Business Influence -15&lt;/p&gt;
 [[View ending|Ending]]</tw-passagedata><tw-passagedata pid="15" name="Hush Money" tags="" position="625,1125" size="100,100">&lt;&lt;set $funds -= 1&gt;&gt;
 &lt;p&gt;💰 Used money to cover up the truth of the incident.&lt;/p&gt;
 &lt;p&gt;💰 用金钱掩盖了事故真相。&lt;/p&gt;
 &lt;&lt;set $policyCompliance -= 5&gt;&gt;
-&lt;p&gt;Business Influence: &lt;&lt;print $businessInfluence&gt;&gt;&lt;/p&gt;
-&lt;p&gt;Policy Compliance: &lt;&lt;print $policyCompliance&gt;&gt;&lt;/p&gt;
-&lt;p&gt;Tech Innovation: &lt;&lt;print $techInnovation&gt;&gt;&lt;/p&gt;
-&lt;p&gt;Funds: &lt;&lt;print $funds&gt;&gt;&lt;/p&gt;
+&lt;p&gt;Policy Compliance -5&lt;/p&gt;
+&lt;p&gt;Funds -1&lt;/p&gt;
 [[View ending|Ending]]</tw-passagedata><tw-passagedata pid="16" name="Ending" tags="" position="500,1250" size="100,100">&lt;h2&gt;One Week Later · Final Outcome&lt;/h2&gt;
 &lt;h2&gt;一周后 · 最终结果&lt;/h2&gt;
 &lt;&lt;if $airspaceMonopoly and $businessInfluence &gt;= 25&gt;&gt;
